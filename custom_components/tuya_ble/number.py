@@ -12,14 +12,38 @@ from homeassistant.components.number import (
 )
 from homeassistant.components.number.const import NumberDeviceClass, NumberMode
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+'''from homeassistant.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
     TIME_MINUTES,
     TIME_SECONDS,
     VOLUME_MILLILITERS,
     UnitOfTemperature,
-)
+)'''
+try:
+    # Try importing modern enums from newer Home Assistant versions
+    from homeassistant.const import (
+        PERCENTAGE,
+        UnitOfTemperature,
+        UnitOfTime,
+        UnitOfVolume,
+        UnitOfConcentration,
+    )
+
+    CONCENTRATION_PARTS_PER_MILLION = UnitOfConcentration.PARTS_PER_MILLION
+    TIME_MINUTES = UnitOfTime.MINUTES
+    TIME_SECONDS = UnitOfTime.SECONDS
+    VOLUME_MILLILITERS = UnitOfVolume.MILLILITERS
+
+except ImportError:
+    # Fallback to manual strings for compatibility
+    PERCENTAGE = "%"
+    CONCENTRATION_PARTS_PER_MILLION = "ppm"
+    TIME_MINUTES = "min"
+    TIME_SECONDS = "s"
+    VOLUME_MILLILITERS = "mL"
+    UnitOfTemperature = type("UnitOfTemperature", (), {"CELSIUS": "°C", "FAHRENHEIT": "°F"})
+
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback

@@ -10,7 +10,7 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+'''from homeassistant.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
@@ -18,7 +18,35 @@ from homeassistant.const import (
     VOLUME_MILLILITERS,
     UnitOfTemperature,
     UnitOfTime
-)
+)'''
+try:
+    # Try importing modern enums from newer Home Assistant versions
+    from homeassistant.const import (
+        PERCENTAGE,
+        UnitOfTemperature,
+        UnitOfTime,
+        TEMP_CELSIUS,
+        UnitOfVolume,
+        UnitOfConcentration,
+        SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
+    )
+
+    CONCENTRATION_PARTS_PER_MILLION = UnitOfConcentration.PARTS_PER_MILLION
+    TIME_MINUTES = UnitOfTime.MINUTES
+    TIME_SECONDS = UnitOfTime.SECONDS
+    VOLUME_MILLILITERS = UnitOfVolume.MILLILITERS
+
+except ImportError:
+    # Fallback to manual strings for compatibility
+    PERCENTAGE = "%"
+    SIGNAL_STRENGTH_DECIBELS_MILLIWATT = "dBm"
+    TEMP_CELSIUS = "°C"
+    CONCENTRATION_PARTS_PER_MILLION = "ppm"
+    TIME_MINUTES = "min"
+    TIME_SECONDS = "s"
+    VOLUME_MILLILITERS = "mL"
+    UnitOfTemperature = type("UnitOfTemperature", (), {"CELSIUS": "°C", "FAHRENHEIT": "°F"})
+
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
