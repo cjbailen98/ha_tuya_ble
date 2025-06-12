@@ -133,6 +133,20 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
             ),
         },
     ),
+    "kg": TuyaBLECategorySelectMapping(
+        products={
+            **dict.fromkeys(
+                [
+                    "mknd4lci",
+                    "6jcvqwh0",
+                    "riecov42"
+                ],  # Fingerbot Plus
+                [
+                    TuyaBLEFingerbotModeMapping(dp_id=101),
+                ],
+            ),
+        },
+    ),
     "wsdcg": TuyaBLECategorySelectMapping(
         products={
             "ojzlzzsw":  # Soil moisture sensor

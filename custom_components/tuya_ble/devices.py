@@ -223,7 +223,6 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     "blliqpsj",
                     "ndvkgsrm",
                     "yiihr7zh", 
-                    "6jcvqwh0", 
                     "neq16kgd"
                 ],  # device product_ids
                 TuyaBLEProductInfo(
@@ -260,6 +259,30 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                         hold_time=10,
                         reverse_positions=11,
                         program=121,
+                    ),
+                ),
+            ),
+        },
+    ),
+    "kg": TuyaBLECategoryInfo(
+        products={
+            **dict.fromkeys(
+                [
+                    "mknd4lci",
+                    "6jcvqwh0",
+                    "riecov42"
+                ],  # device product_ids
+                TuyaBLEProductInfo(
+                    name="Fingerbot Plus",
+                    fingerbot=TuyaBLEFingerbotInfo(
+                        switch=1,
+                        mode=101,
+                        up_position=106,
+                        down_position=102,
+                        hold_time=103,
+                        reverse_positions=104,
+                        manual_control=107,
+                        program=109,
                     ),
                 ),
             ),
