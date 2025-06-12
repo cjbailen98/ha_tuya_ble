@@ -223,6 +223,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     "blliqpsj",
                     "ndvkgsrm",
                     "yiihr7zh", 
+                    "6jcvqwh0", 
                     "neq16kgd"
                 ],  # device product_ids
                 TuyaBLEProductInfo(
@@ -247,7 +248,6 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     "nvr2rocq",
                     "bnt7wajf",
                     "rvdceqjh",
-                    "6jcvqwh0",
                     "5xhbk964",
                 ],  # device product_ids
                 TuyaBLEProductInfo(

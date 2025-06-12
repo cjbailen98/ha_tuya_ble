@@ -205,6 +205,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     "blliqpsj",
                     "ndvkgsrm",
                     "yiihr7zh", 
+                    "6jcvqwh0", 
                     "neq16kgd"
                 ],  # Fingerbot Plus
                 [
@@ -215,7 +216,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                 [
                     "ltak7e1p",
                     "y6kttvd6",
-                    "6jcvqwh0",
                     "yrnk7mnn",
                     "nvr2rocq",
                     "bnt7wajf",

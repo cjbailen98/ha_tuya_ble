@@ -123,6 +123,7 @@ mapping: dict[str, TuyaBLECategoryTextMapping] = {
                     "blliqpsj",
                     "ndvkgsrm",
                     "yiihr7zh",
+                    "6jcvqwh0",
                     "neq16kgd"
                 ],  # Fingerbot Plus
                 [
